@@ -42,13 +42,6 @@ export const CreateSnippetPage = () => {
         <div className="container mx-auto p-4">
             <h1 className="text-2xl font-bold mb-4">Create New Snippet</h1>
             <div className="mt-4">
-                <input
-                    className="w-full p-2 border rounded mb-2"
-                    type="text"
-                    placeholder="Enter snippet title..."
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                />
                 <textarea
                     className="w-full p-2 border rounded"
                     rows={4}

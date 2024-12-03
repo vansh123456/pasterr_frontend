@@ -2,8 +2,8 @@ import { Link } from "react-router-dom"
 
 export const Appbar = () => {
     return <div className="border-b flex justify-between px-10 py-4" >
-        <Link to={'/blogs'} className="cursor-pointer">
-        <div className="italic">
+        <Link to={'/snippets'} className="cursor-pointer">
+        <div className="font-extrabold text-2xl italic">
             Pasterr!
         </div>
         </Link>

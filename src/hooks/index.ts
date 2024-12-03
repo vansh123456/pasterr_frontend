@@ -37,3 +37,36 @@ export const useSnippets = () => {
     },[]);
     return { snippets, loading, error,fetchSnippets };
 }
+
+export const useSnippetActions = () => {
+    
+    const deleteSnippet = async(id: number) => {
+        const token = localStorage.getItem("token");
+        try {
+            await axios.delete(`http://localhost:8080/snippets/${id}`, {
+              headers: { Authorization: `Bearer ${token}` },
+            });
+            alert("Snippet deleted successfully!");
+    } catch(err) {
+        console.error("Error deleting snippet:", err);
+        alert("Failed to delete snippet. Please try again.");
+        }
+    }
+
+    const updateSnippetContent = async (id: number, content: string) => {
+        const token = localStorage.getItem("token");
+    try {
+      const response = await axios.put(
+        `http://localhost:8080/snippets/${id}`,
+        {id,content },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+      alert("Snippet updated successfully!");
+      return response.data;
+    } catch (err) {
+        console.error("Error updating snippet:", err);
+        alert("Failed to update snippet. Please try again.");
+      }
+    };
+    return{ deleteSnippet, updateSnippetContent} //returns the async functions in our custom defined hooks
+}
