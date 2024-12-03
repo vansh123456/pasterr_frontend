@@ -73,7 +73,10 @@
 
 import React from "react";
 import { Auth } from "../components/Auth";
+import { Appbar } from "../components/Appbar";
 
 export const Signup = () => {
-    return <Auth type="signup" />;
+    return <>
+        <Auth type="signup" />;
+    </>
 };
