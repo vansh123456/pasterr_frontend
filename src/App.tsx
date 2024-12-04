@@ -1,4 +1,3 @@
-import { Appbar } from "./components/Appbar"
 import CreateSnippetPage from "./pages/NewSnippet"
 import { Signin } from "./pages/SignIn"
 import { Signup } from "./pages/SignUp"
@@ -10,6 +9,7 @@ function App() {
     <>
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<Signup/>} />
         <Route path="/signup" element = {<Signup/>}/>
         <Route path="/signin" element = {<Signin/> }/>
         <Route path= "/snippets" element = {<Snippets/>}/>

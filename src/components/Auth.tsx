@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { InputBox } from "../components/InputBox";
 import { Button } from "../components/Button";
 import { Heading } from "../components/Heading";
@@ -17,7 +17,7 @@ export const Auth = ({ type }: AuthProps) => {
 
     const handleSubmit = async () => {
         try {
-            const url = `http://localhost:8080/${type}`;
+            const url = `https://pasterr-keybe.onrender.com/${type}`;
             const payload =
                 type === "signup"
                     ? { username, email, password } // Signup requires username

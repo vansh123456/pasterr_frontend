@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -17,7 +17,7 @@ export const CreateSnippetPage = () => {
 
         try {
             await axios.post(
-                "http://localhost:8080/snippets",
+                "https://pasterr-keybe.onrender.com/snippets",
                 {
                     title,
                     content,

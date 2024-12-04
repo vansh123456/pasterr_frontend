@@ -17,7 +17,7 @@ export const useSnippets = () => {
             return;
     }
     try {
-        const response = await axios.get("http://localhost:8080/snippets",{
+        const response = await axios.get("https://pasterr-keybe.onrender.com/snippets",{
             headers: {
                 Authorization: `Bearer ${token}`,
             },
@@ -43,7 +43,7 @@ export const useSnippetActions = () => {
     const deleteSnippet = async(id: number) => {
         const token = localStorage.getItem("token");
         try {
-            await axios.delete(`http://localhost:8080/snippets/${id}`, {
+            await axios.delete(`https://pasterr-keybe.onrender.com/snippets/${id}`, {
               headers: { Authorization: `Bearer ${token}` },
             });
             alert("Snippet deleted successfully!");
@@ -57,7 +57,7 @@ export const useSnippetActions = () => {
         const token = localStorage.getItem("token");
     try {
       const response = await axios.put(
-        `http://localhost:8080/snippets/${id}`,
+        `https://pasterr-keybe.onrender.com/snippets/${id}`,
         {id,content },
         { headers: { Authorization: `Bearer ${token}` } }
       );

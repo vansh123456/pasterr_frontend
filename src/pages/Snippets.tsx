@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSnippets,useSnippetActions } from "../hooks";
 import { Appbar } from "../components/Appbar";
@@ -57,7 +57,7 @@ const Homepage = () => {
                     <h2 className="font-bold">{snippet.title}</h2>
                     <p>{snippet.content}</p>
                     <small className="text-gray-500">
-                      Created at: {new Date(snippets.created_at).toLocaleString()}
+                      Created at: {new Date(Date.now()).toLocaleString()}
                     </small>
                     <div className="mt-2">
                       {/* Edit and Delete Buttons */}
