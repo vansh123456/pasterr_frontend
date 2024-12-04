@@ -11,7 +11,7 @@ const Homepage = () => {
     const [newContent, setNewContent] = useState("");
 
     if (loading) {
-        return <div className="flex flex-row min-h-screen justify-center items-center">Loading snippets...</div>;
+        return <div className="flex flex-row min-h-screen justify-center items-center font-extrabold text-2xl italic">Loading snippets...</div>;
     }
 
     if (error) {
@@ -57,7 +57,7 @@ const Homepage = () => {
                     <h2 className="font-bold">{snippet.title}</h2>
                     <p>{snippet.content}</p>
                     <small className="text-gray-500">
-                      Created at: {new Date(snippet.created_at).toLocaleString()}
+                      Created at: {new Date(snippets.created_at).toLocaleString()}
                     </small>
                     <div className="mt-2">
                       {/* Edit and Delete Buttons */}

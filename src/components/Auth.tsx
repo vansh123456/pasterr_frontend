@@ -3,7 +3,7 @@ import { InputBox } from "../components/InputBox";
 import { Button } from "../components/Button";
 import { Heading } from "../components/Heading";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import {Link, useNavigate } from "react-router-dom";
 
 interface AuthProps {
     type: "signup" | "signin"; // Determines the behavior and label
@@ -41,9 +41,12 @@ export const Auth = ({ type }: AuthProps) => {
     };
 
     return (
+        <div className="bg-black">
         <div className="bg-gray-100 h-screen flex justify-center items-center">
             <div className="bg-white p-8 rounded shadow-md w-96">
                 <Heading label={type === "signup" ? "Sign Up" : "Sign In"} />
+                <div className="flex justify-center text-slate-500"> {type === "signin" ? "Don't have an account?" : "Already have an account?" }
+                <Link className="underline pl-1" to={type === "signin" ? "/signup" : "/signin"}>{type === "signin" ? "Sign up" : "Sign in"}</Link></div>
                 {type === "signup" && (
                     <InputBox
                         label="Name"
@@ -69,6 +72,7 @@ export const Auth = ({ type }: AuthProps) => {
                     onClick={handleSubmit}
                 />
             </div>
+        </div>
         </div>
     );
 };
