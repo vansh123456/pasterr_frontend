@@ -5,7 +5,8 @@ export const Appbar = () => {
 
     // Define routes where the button should be hidden
     const routesToHideButton = ["/","/signin", "/signup"];
-    const hideButton = routesToHideButton.some(route => location.pathname.startsWith(route));
+    const hideButton = routesToHideButton.includes(location.pathname);
+    //const hideButton = routesToHideButton.some(route => location.pathname.startsWith(route));
 
     return (
         <div className="border-b flex justify-between px-10 py-4">
